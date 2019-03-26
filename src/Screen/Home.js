@@ -35,12 +35,13 @@ export class Home extends Component {
     return (
       <div>
         <Title name="GitHub DashBoard" />
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", marginTop: 30 }}>
           <SearchBar value={searchBar} onChange={this.onSearchChange} />
           <Button label="Search" onClick={this.onSearchClick} />
         </div>
-        <br />
-        <User profile={userProfile} repos={repos} />
+        <div style={{ marginTop: 30 }}>
+          <User profile={userProfile} repos={repos} />
+        </div>
       </div>
     );
   }

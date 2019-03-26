@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import purple from "@material-ui/core/colors/purple";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
 
 export class SearchBar extends Component {
   constructor(props) {
@@ -16,17 +21,20 @@ export class SearchBar extends Component {
   };
 
   render() {
-    const { placeHolder } = this.props;
     const { username } = this.state;
     return (
-      <div>
-        <input
-          type="text"
-          value={username}
-          onChange={this.handleChange}
-          placeholder={placeHolder}
-        />
-      </div>
+      <Toolbar align="center">
+        <IconButton color="inherit" aria-label="Open drawer" />
+        <Typography variant="h6" color="inherit" noWrap />
+        <div>
+          <input
+            type="text"
+            value={username}
+            onChange={this.handleChange}
+            placeholder="UserName"
+          />
+        </div>
+      </Toolbar>
     );
   }
 }
